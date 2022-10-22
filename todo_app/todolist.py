@@ -40,10 +40,12 @@ class TodoList:
                 return item
 
     def verify(self):
-
+        ordenado = 2;
         for item_array in self.list:
             if (item_array.nivel < valor):
-                return 0;
+                ordenado = 0;
+                return ordenado;
             valor = item_array.nivel
-        return 1
+        orneado = 1
+        return ordenado;
 
