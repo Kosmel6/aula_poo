@@ -24,8 +24,16 @@ def test_ordem():
     lista.add(item3);
     item.modify(1);
     lista.add(item);
+    i =0;
+    count = 1;
+    for i in range(3):
+        if(lista.list[i].nivel > lista.list[i+1].nivel):
+            count = 1;
+            break;
+        else:
+            count = 0;
 
 
-    assert lista.verify() == 1;
+    assert count == 0;
 
 

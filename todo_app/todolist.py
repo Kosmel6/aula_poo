@@ -7,17 +7,8 @@ class TodoList:
         self.list = []
 
     def add(self, item: TodoItem):
-        tamanho = len(self.list)
-        i = 0;
-        for i in range(tamanho):
-            if self.list[i] == item:
-                self.list.remove(item);
-                i = tamanho;
-        i = 0;
-        for i in range(tamanho):
-            if self.list[i+1].nivel > item.nivel:
-                self.list.insert(i, item);
-                i = tamanho;
+        self.list.append(item);
+        self.order();
 
     def get(self, index):
         return self.list[index]
@@ -39,13 +30,6 @@ class TodoList:
             if item.description == description:
                 return item
 
-    def verify(self):
-        ordenado = 2;
-        for item_array in self.list:
-            if (item_array.nivel < valor):
-                ordenado = 0;
-                return ordenado;
-            valor = item_array.nivel
-        orneado = 1
-        return ordenado;
+    def order(self):
+        self.list.sort(key =  lambda item: item.nivel)
 
